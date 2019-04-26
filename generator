@@ -6,7 +6,7 @@ start=0
 [[ -e log.txt ]] || echo > log.txt "$SECONDS"
 
 SPOILER="I watched Avengers: Endgame. Thanos d**s..."
-
+DELAY=2
 while ((1))
 do
 	if [[ $start != $SECONDS ]]
@@ -18,9 +18,12 @@ do
 		RAND=$RANDOM
 		if [[ $((RAND%3)) -eq 0 ]]
 		then
+			
 			echo $SPOILER
 			echo >> log.txt "$SPOILER"
+			
 		fi
+		sleep $DELAY
 	fi
 done
 
